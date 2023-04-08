@@ -1,0 +1,38 @@
+#!/bin/bash
+work_time=25
+pause_time=5
+loop_amount=3
+big_break=30
+clear
+tput civis
+while true
+do
+	
+	for ((i=1; i<=$loop_amount; i++))
+	do
+		for ((j=0; j<$work_time; j++))
+		do
+			echo "Cycle: ${i} [$loop_amount]"
+			echo "Time: ${j} [$work_time]"
+			sleep 60
+			clear
+		done
+		
+		for ((j=0; j<$pause_time; j++))
+		do
+			echo "Cycle: ${i} [$loop_amount]"		
+			echo "Pause: ${j} [$pause_time]"
+			sleep 60
+			clear
+		done
+	done
+	
+	for ((i=0; i<$big_break; i++))
+	do
+		echo "Cycle: ${i} [$loop_amount]"	
+		echo "Break-Time: ${i} [$break_time]"
+		sleep 60
+		clear
+	done
+done
+
