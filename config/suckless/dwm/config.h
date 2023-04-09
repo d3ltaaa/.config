@@ -17,8 +17,8 @@ static const int showfloating       = 1;        /* 0 means no floating indicator
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 18;       /* vertical padding of bar */
 static const int sidepad            = 18;       /* horizontal padding of bar */
-static const char *fonts[]          = { "monospace:size=13" };
-static const char dmenufont[]       = "monospace:size=13";
+static const char *fonts[]          = { "cantarell:size=11" };
+static const char dmenufont[]       = "cantarell:size=11";
 // background color
 static const char col_gray1[]       = "#4c566a";
 // inactive window border color 
