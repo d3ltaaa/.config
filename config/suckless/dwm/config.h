@@ -15,11 +15,9 @@ static const int showlayout         = 1;        /* 0 means no layout indicator *
 static const int showstatus         = 1;        /* 0 means no status bar */
 static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 18;
-static const int sidepad            = 18;
-static const int user_bh            = 2;        /* 2 is the default spacing around the bar's font */
-static const char *fonts[]          = { "cantarell:size=10" };
-static const char dmenufont[]       = "cantarell:size=10";
+static const int user_bh            = 8;        /* 2 is the default spacing around the bar's font */
+static const char *fonts[]          = { "cantarell:size=9" };
+static const char dmenufont[]       = "cantarell:size=11";
 static const char col_gray1[]       = "#4c566a";
 static const char col_gray2[]       = "#4c566a";
 static const char col_gray3[]       = "#8fbcbb";
@@ -32,7 +30,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4"};
+static const char *tags[] = { "1", "2", "3", "4" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -72,8 +70,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *system_menu[] = { "/home/falk/.scripts/system_menu", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -129,6 +128,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+    { MODKEY|ShiftMask,		XK_s,	   spawn,	   {.v = system_menu} },
 };
 
 /* button definitions */

@@ -14,7 +14,7 @@ static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#8fbcbb", "#4c566a" },
 	[SchemeSel] = { "#4c566a", "#8fbcbb" },
-	[SchemeOut] = { "#8fbcbb", "#4c566a" },
+	[SchemeOut] = { "#8fbcbb", "#4c566a"},
 	[SchemeHp]  = { "#8fbcbb", "#4c566a" }
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
@@ -30,4 +30,4 @@ static unsigned int min_lineheight = 8;
 static const char worddelimiters[] = " ";
 
 /* Size of the window border */
-static unsigned int border_width = 8;
+static unsigned int border_width = 7;
