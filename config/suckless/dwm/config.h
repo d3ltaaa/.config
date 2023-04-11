@@ -16,7 +16,7 @@ static const int showstatus         = 1;        /* 0 means no status bar */
 static const int showfloating       = 1;        /* 0 means no floating indicator */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 8;        /* 2 is the default spacing around the bar's font */
-static const char *fonts[]          = { "cantarell:size=9" };
+static const char *fonts[]          = { "cantarell:size=10" };
 static const char dmenufont[]       = "cantarell:size=11";
 static const char col_gray1[]       = "#4c566a";
 static const char col_gray2[]       = "#4c566a";
@@ -73,6 +73,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *system_menu[] = { "/home/falk/.scripts/system_menu", NULL};
+static const char *volume_inc[] = {"/home/falk/.scripts/d-volume-inc", NULL};
+static const char *volume_dec[] = {"/home/falk/.scripts/d-volume-dec", NULL};
+static const char *volume_mut[] = {"/home/falk/.scripts/d-volume-mute", NULL};
+static const char *brightness_up[] = {"/home/falk/.scripts/d-light-up", NULL};
+static const char *brightness_dw[] = {"/home/falk/.scripts/d-light-dw", NULL};
+
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -128,8 +134,14 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
-    { MODKEY|ShiftMask,		XK_s,	   spawn,	   {.v = system_menu} },
-};
+    { MODKEY|ShiftMask,	        	XK_s,	   spawn,	       {.v = system_menu} },
+    { 0,                            0x1008ff13, spawn,         {.v = volume_inc}},
+    { 0,                            0x1008ff11, spawn,         {.v = volume_dec}},
+    { 0,                            0x1008ff12, spawn,         {.v = volume_mut}}, 
+    { 0,                            0x1008ff03, spawn,         {.v = brightness_dw}}, 
+    { 0,                            0x1008ff02, spawn,         {.v = brightness_up}}, 
+
+}; 
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
@@ -141,6 +153,9 @@ static const Button buttons[] = {
 	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
 	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
 	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
+    { ClkStatusText,        0,              Button4,        sigstatusbar,   {.i = 4} },
+	{ ClkStatusText,        0,              Button5,        sigstatusbar,   {.i = 5} },
+	{ ClkStatusText,        ShiftMask,      Button1,        sigstatusbar,   {.i = 6} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

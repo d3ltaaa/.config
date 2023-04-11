@@ -1,0 +1,2 @@
+#!/bin/bash
+brillo -U 10
