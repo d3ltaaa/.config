@@ -1,4 +1,6 @@
 /* See LICENSE file for copyright and license details. */
+//
+#include "/home/falk/.config/suckless/color.h"
 
 /*
  * appearance
@@ -119,13 +121,13 @@ static const char *colorname[] = {
 	"#e5e9f0", // white
 		   
 	// bright colors
-	"#4c566a", // bblack
+	SECOND_COLOR, // bblack
 	"#bf616a", // bred
 	"#a3be8c", // bgreen
 	"#ebcb8b", // byellow
 	"#81a1c1", // bblue
 	"#b48ead", // bpurple
-	"#8fbcbb", // bcyan
+	THIRD_COLOR, // bcyan
 	"#eceff0",   // bwhite
 
 	[255] = 0,
@@ -134,7 +136,7 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#555555",
 	"gray90", /* default foreground colour */
-	"#2e3440", /* default background colour */
+	MAIN_COLOR, /* default background colour */
 };
 
 /*

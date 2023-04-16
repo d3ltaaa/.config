@@ -4,4 +4,4 @@ case $BUTTON in
     1) system_menu;;
 esac
 
-echo "  %  "
+echo "    󰣇    "

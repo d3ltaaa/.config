@@ -4,5 +4,5 @@ case $BUTTON in
     1) firefox -new-window https://calendar.proton.me/u/0/
 esac
 
-date +"    %d.%m - %R  "
+date +"    %R  -  %d.%m    "
 

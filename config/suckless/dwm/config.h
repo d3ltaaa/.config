@@ -1,4 +1,6 @@
 /* See LICENSE file for copyright and license details. */
+//
+#include "/home/falk/.config/suckless/color.h"
 
 /* appearance */
 static const unsigned int borderpx  = 7;        /* border pixel of windows */
@@ -18,11 +20,16 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 8;        /* 2 is the default spacing around the bar's font */
 static const char *fonts[]          = { "cantarell:size=10" };
 static const char dmenufont[]       = "cantarell:size=11";
-static const char col_gray1[]       = "#4c566a";
-static const char col_gray2[]       = "#4c566a";
-static const char col_gray3[]       = "#8fbcbb";
-static const char col_gray4[]       = "#4c566a";
-static const char col_cyan[]        = "#8fbcbb";
+// background color
+static const char col_gray1[]       = SECOND_COLOR;
+// inactive window border color
+static const char col_gray2[]       = SECOND_COLOR;
+// font color
+static const char col_gray3[]       = THIRD_COLOR;
+// current tag and current window font color
+static const char col_gray4[]       = MAIN_COLOR;
+// Top bar second color (blue) and active window border color
+static const char col_cyan[]        = THIRD_COLOR;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

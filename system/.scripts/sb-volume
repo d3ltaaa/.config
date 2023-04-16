@@ -12,7 +12,7 @@ case $BUTTON in
 esac
 
 if [ "$mute" = true ]; then
-    echo "    0%    "
+    echo "    0% 󰖁    "
 else
-    echo "    $vol%    "
+    echo "    $vol% 󰕾     "
 fi

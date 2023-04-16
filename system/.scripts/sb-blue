@@ -4,4 +4,4 @@ case $BUTTON in
     1) blueman-manager;;
 esac
 
-echo "    $    "
+echo "    󰂯    "

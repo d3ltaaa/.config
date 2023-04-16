@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
+//
+
+#include "/home/falk/.config/suckless/color.h"
 
 static int instant = 1;
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
@@ -12,10 +15,10 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { "#8fbcbb", "#4c566a" },
-	[SchemeSel] = { "#4c566a", "#8fbcbb" },
-	[SchemeOut] = { "#8fbcbb", "#4c566a"},
-	[SchemeHp]  = { "#8fbcbb", "#4c566a" }
+	[SchemeNorm] = { THIRD_COLOR, SECOND_COLOR },
+	[SchemeSel] = { SECOND_COLOR, THIRD_COLOR },
+	[SchemeOut] = { THIRD_COLOR, SECOND_COLOR},
+	[SchemeHp]  = { THIRD_COLOR, SECOND_COLOR }
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 15;
