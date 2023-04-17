@@ -21,7 +21,7 @@ static const int user_bh            = 8;        /* 2 is the default spacing arou
 static const char *fonts[]          = { "cantarell:size=10" };
 static const char dmenufont[]       = "cantarell:size=11";
 // background color
-static const char col_gray1[]       = SECOND_COLOR;
+static const char col_gray1[]       = MAIN_COLOR;
 // inactive window border color
 static const char col_gray2[]       = SECOND_COLOR;
 // font color
