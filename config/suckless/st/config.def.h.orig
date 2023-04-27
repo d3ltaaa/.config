@@ -1,14 +1,12 @@
 /* See LICENSE file for copyright and license details. */
-//
-#include "/home/falk/.config/suckless/color.h"
 
 /*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "UbuntuMono-Regular:pixelsize=15:antialias=true:autohint=true";
-static int borderpx = 40;
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static int borderpx = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -75,11 +73,11 @@ static unsigned int cursorthickness = 2;
  *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
  * 0: disable (render all U25XX glyphs normally from the font).
  */
-const int boxdraw = 1;
-const int boxdraw_bold = 1;
+const int boxdraw = 0;
+const int boxdraw_bold = 0;
 
 /* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 1;
+const int boxdraw_braille = 0;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -105,33 +103,29 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
-
-/* bg opacity */
-float alpha = 1.0;
+unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-	// normal colors	
-	"#3b4252", // black
-	"#bf616a", // red
-	"#a3be8c", // green
-	"#ebcb8b", // yellow
-	"#88c0d0", // blue
-	"#b48ead", // purple
-	"#88c0d0", // cyan 
-	"#e5e9f0", // white
-		   
-	// bright colors
-	SECOND_COLOR, // bblack
-	"#bf616a", // bred
-	"#a3be8c", // bgreen
-	"#ebcb8b", // byellow
-	"#81a1c1", // bblue
-	"#b48ead", // bpurple
-	THIRD_COLOR, // bcyan
-	"#eceff0",   // bwhite
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
 	[255] = 0,
 
@@ -139,8 +133,9 @@ static const char *colorname[] = {
 	"#cccccc",
 	"#555555",
 	"gray90", /* default foreground colour */
-	MAIN_COLOR, /* default background colour */
+	"black", /* default background colour */
 };
+
 
 /*
  * Default colors (colorname index)
