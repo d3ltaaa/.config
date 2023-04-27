@@ -1,9 +1,9 @@
 #!/bin/bash
 
-work_time=25
-pause_time=5
+work_time=1
+pause_time=1
 loop_amount=3
-big_break=30
+big_break=3
 
 function pause_p {
     read -t 0.1 -n 1 key
@@ -35,7 +35,6 @@ function time_module {
     do
         pause_p $1 $2 $3 $4 $min
 
-        sleep 1
         ((sec++))
         # echo "$sec"
         
@@ -48,8 +47,7 @@ function time_module {
 }
 
 function play_sound {
-    play -n synth 1 pluck E2
-    sleep 1
+    play -n synth 3 pluck E2
 }
 
 # clear screen
@@ -63,7 +61,6 @@ do
     do
         
         time_module $i $work_time "Work" $loop_amount
-        # play_sound
 
         if [[ $i<$loop_amount ]]; then
             time_module $i $pause_time "Pause" $loop_amount
