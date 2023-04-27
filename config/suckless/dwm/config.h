@@ -36,8 +36,27 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41",  NULL };
+const char *spcmd2[] = {"st", "-n", "sppomo", "-g", "34x10", "-e", "pomodoro", NULL };
+const char *spcmd3[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
+const char *spcmd4[] = {"st", "-n", "spspot", "-g", "144x41", "-e", "ncspot", NULL };
+const char *spcmd5[] = {"keypassxc", NULL };
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"sppomo",      spcmd2},
+	{"spranger",    spcmd3},
+	{"spspot",      spcmd4},
+	{"keypassxc",   spcmd5},
+};
+
 /* tagging */
-static const char *tags[] = { "󰅵", "󰈹", "", "", "", "" };
+static const char *tags[] = { "󰅵", "󰈹", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -47,6 +66,11 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ NULL,		  "spterm",		NULL,		SPTAG(0),		1,			 -1 },
+	{ NULL,		  "sppomo",		NULL,		SPTAG(1),		1,			 -1 },
+	{ NULL,		  "spfm",		NULL,		SPTAG(2),		1,			 -1 },
+	{ NULL,		  "spspot",		NULL,		SPTAG(3),		1,			 -1 },
+	{ NULL,		  "keypassxc",	NULL,		SPTAG(4),		1,			 -1 },
 };
 
 /* layout(s) */
@@ -130,6 +154,11 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,            			XK_e,  	   togglescratch,  {.ui = 0 } },
+	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 1 } },
+	{ MODKEY,            			XK_r,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            			XK_n,	   togglescratch,  {.ui = 3 } },
+	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 4 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

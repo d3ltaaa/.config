@@ -1,12 +1,12 @@
 #!/bin/bash
 
-work_time=1
-pause_time=1
+work_time=25
+pause_time=5
 loop_amount=3
-big_break=3
+big_break=30
 
 function pause_p {
-    read -t 0.1 -n 1 key
+    read -t 1 -n 1 key
     if [[ $key == "p" ]]; then
         print_stats $1 $2 $3 $4 $5
         echo "Timer paused. Press any key to resume."
