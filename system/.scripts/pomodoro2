@@ -1,17 +1,16 @@
 #!/bin/bash
-
-work_time=25
-pause_time=5
-loop_amount=3
-big_break=30
+work_time=3
+pause_time=1
+loop_amount=2
+big_break=2
 
 function pause_p {
     read -t 0.1 -n 1 key
     if [[ $key == "p" ]]; then
-        print_stats $1 $2 $3 $4 $5
+        print_stats $1 $2
         echo "Timer paused. Press any key to resume."
         read -n 1
-        print_stats $1 $2 $3 $4 $5
+        print_stats $1 $2
         
     fi
 }
@@ -20,8 +19,8 @@ function print_stats {
     # i(cycle), ..._time, "...", min
     clear
     echo "$3"
-    echo "Cycle: ${1} [$4]"
-    echo "Time: ${5} [$2]"
+    echo "Cycle: ${1} [$loop_amount]"
+    echo "Time: ${4} [$2]"
      
 }
 
@@ -29,27 +28,22 @@ function time_module {
     sec=0
     min=0
 
-    print_stats $1 $2 $3 $4 $min  
+    print_stats $1 $2 $3 $min  
 
     while (($sec<$2*60))
     do
-        pause_p $1 $2 $3 $4 $min
+        pause_p $1 $min
 
-        sleep 1
+        sleep 0.1
         ((sec++))
         # echo "$sec"
         
         # check if a minute went by than update stats
         if [[ $sec == $(($min*60 + 60)) ]]; then
             ((min++))
-            print_stats $1 $2 $3 $4 $min 
+            print_stats $1 $2 $3 $min  
         fi
     done
-}
-
-function play_sound {
-    play -n synth 1 pluck E2
-    sleep 1
 }
 
 # clear screen
@@ -62,16 +56,16 @@ do
     for ((i=1; i<=$loop_amount; i++))
     do
         
-        time_module $i $work_time "Work" $loop_amount
-        # play_sound
-
-        if [[ $i<$loop_amount ]]; then
-            time_module $i $pause_time "Pause" $loop_amount
+        time_module $i $work_time "Work"
+        if [[ i!=$loop_amount ]]; then
+            time_module $i $pause_time "Pause"
         fi
     done
 
-    time_module 1 $big_break "Break" 1
-
+    echo "----------------_"
+    sleep 3
+    
+    j=1
+    time_module $j $break_time "Break"
 
 done
-
