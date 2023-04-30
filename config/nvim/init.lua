@@ -6,3 +6,5 @@ require("d3ltaaa.plugins.comment")
 require("d3ltaaa.plugins.nvim_tree")
 require("d3ltaaa.plugins.lualine")
 require("d3ltaaa.plugins.telescope")
+vim.o.termguicolors = true
+require("d3ltaaa.plugins.plug-colorizer")
