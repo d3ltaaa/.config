@@ -63,11 +63,15 @@ do
         time_module $i $work_time "Work" $loop_amount
 
         if [[ $i<$loop_amount ]]; then
+            dunstify -t $(($pause_time*60*1000)) "Pomodoro" "Short Break"
             time_module $i $pause_time "Pause" $loop_amount
+            dunstify "Pomodoro" "Work Time"
         fi
     done
 
+    dunstify -t $(($big_break*60*1000)) "Pomodoro" "Long Break"
     time_module 1 $big_break "Break" 1
+    dunstify "Pomodoro" "Work Time" 
 
 
 done
