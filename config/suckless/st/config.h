@@ -179,7 +179,6 @@ static unsigned int mousebg = 0;
  * doesn't match the ones requested.
  */
 static unsigned int defaultattr = 11;
-
 /*
  * Force mouse select/shortcuts while mask is active (when MODE_MOUSE is set).
  * Note that if you want to use ShiftMask with selmasks, set this to an other
@@ -220,8 +219,11 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ ControlMask,          XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ControlMask,          XK_Page_Down,   kscrolldown,    {.i = -1} },
+    { ControlMask,          XK_k,           kscrollup,      {.i =  1} },
+	{ ControlMask,          XK_j,           kscrolldown,    {.i =  1} },
+
 
 };
 
