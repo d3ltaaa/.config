@@ -1,6 +1,11 @@
 #
 # ~/.bash_profile
 #
+
+if [[ "$(tty)" = "/dev/tty1" ]]; then
+    pgrep dwm || startx
+fi
+
 export PATH="$PATH:$HOME/.scripts"
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
