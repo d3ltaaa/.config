@@ -11,4 +11,6 @@ alias s='startx'
 
 PS1='[\u@\h \W]\$ '
 
-neofetch
+if [[ ! "$(tty)" = "/dev/tty1" ]]; then
+    neofetch
+fi
