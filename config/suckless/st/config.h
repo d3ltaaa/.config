@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/color.h"
+#include "/home/falk/.config/suckless/themes/theme-triangle.h"
 
 /*
  * appearance

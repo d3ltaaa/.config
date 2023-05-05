@@ -1,8 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
-//
-
-#include "/home/falk/.config/suckless/color.h"
+#include "/home/falk/.config/suckless/themes/theme-triangle.h"
 
 static int instant = 1;
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
