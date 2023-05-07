@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Define options
+# images=$(ls ~/Pictures/Wallpapers/old)
+# selected=$(printf '%s\n' "${images[@]}" | dmenu -i)
+# display "$selected"
+
+# Use glob to create an array of files in the directory
+images=(~/Pictures/Wallpapers/old/*)
+
+# Use dmenu to present the list of images to the user
+selected=$(printf '%s\n' "${images[@]}" | dmenu -i)
+
+# Check if the user selected a file
+if [ -n "$selected" ]; then
+    # Use the display command to show the selected image
+    # display -resize $(xdpyinfo | awk '/dimensions/{print $2}') "$selected"
+    feh --scale-down --auto-zoom "$selected" 
+
+
+
+fi
+

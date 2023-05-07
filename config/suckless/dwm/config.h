@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/themes/theme-triangle.h"
+#include "/home/falk/.config/suckless/themes/theme-arch-1.h"
 
 /* appearance */
 static const unsigned int borderpx  = 7;        /* border pixel of windows */
@@ -43,7 +43,7 @@ typedef struct {
 
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41",  NULL };
 const char *spcmd2[] = {"st", "-n", "sppomo", "-g", "34x10", "-e", "pomodoro", NULL };
-const char *spcmd3[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
+const char *spcmd3[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "lf", NULL };
 const char *spcmd4[] = {"st", "-n", "spspot", "-g", "144x41", "-e", "ncspot", NULL };
 const char *spcmd5[] = {"keypassxc", NULL };
 static Sp scratchpads[] = {
