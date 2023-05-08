@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/themes/theme-arch-1.h"
+#include "/home/falk/.config/suckless/themes/arch-dark.h"
 
 /* appearance */
 static const unsigned int borderpx  = 7;        /* border pixel of windows */
@@ -21,15 +21,15 @@ static const int user_bh            = 8;        /* 2 is the default spacing arou
 static const char *fonts[]          = { "cantarell:size=10" };
 static const char dmenufont[]       = "cantarell:size=11";
 // background color
-static const char col_gray1[]       = MAIN_COLOR;
+static const char col_gray1[]       = DWM_BACKGROUND_COLOR;
 // inactive window border color
-static const char col_gray2[]       = SECOND_COLOR;
+static const char col_gray2[]       = DWM_INACTIVE_BORDER_COLOR;
 // font color
-static const char col_gray3[]       = THIRD_COLOR;
+static const char col_gray3[]       = DWM_FONT_COLOR;
 // current tag and current window font color
-static const char col_gray4[]       = MAIN_COLOR;
+static const char col_gray4[]       = DWM_CURRENT_TAG_FONT_COLOR;
 // Top bar second color (blue) and active window border color
-static const char col_cyan[]        = THIRD_COLOR;
+static const char col_cyan[]        = DWM_ACTIVE_BORDER_COLOR;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },

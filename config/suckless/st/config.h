@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/themes/theme-arch-1.h"
+#include "/home/falk/.config/suckless/themes/arch-dark.h"
 
 /*
  * appearance
@@ -114,32 +114,32 @@ float alpha = 1.0;
 static const char *colorname[] = {
 
 	// normal colors	
-	"#3b4252", // black
+	ST_BLACK_COLOR, // black
 	"#bf616a", // red
 	"#a3be8c", // green
 	"#ebcb8b", // yellow
 	"#88c0d0", // blue
 	"#b48ead", // purple
 	"#88c0d0", // cyan 
-	"#e5e9f0", // white
+	ST_WHITE_COLOR, // white
 		   
 	// bright colors
-	SECOND_COLOR, // bblack
+	ST_BLACK_COLOR, // bblack
 	"#bf616a", // bred
 	"#a3be8c", // bgreen
 	"#ebcb8b", // byellow
 	"#81a1c1", // bblue
 	"#b48ead", // bpurple
-	THIRD_COLOR, // bcyan
-	"#eceff0",   // bwhite
+	ST_ACCENT_COLOR, // bcyan
+	ST_WHITE_COLOR,   // bwhite
 
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
 	"#cccccc",
 	"#555555",
-	"gray90", /* default foreground colour */
-	MAIN_COLOR, /* default background colour */
+	ST_FOREGROUND_COLOR, /* default foreground colour */
+	ST_BACKGROUND_COLOR, /* default background colour */
 };
 
 /*

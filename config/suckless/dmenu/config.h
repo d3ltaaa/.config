@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 /* Default settings; can be overriden by command line. */
-#include "/home/falk/.config/suckless/themes/theme-arch-1.h"
+#include "/home/falk/.config/suckless/themes/arch-dark.h"
 
 static int instant = 1;
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
@@ -13,10 +13,10 @@ static const char *fonts[] = {
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
-	[SchemeNorm] = { THIRD_COLOR, SECOND_COLOR },
-	[SchemeSel] = { SECOND_COLOR, THIRD_COLOR },
-	[SchemeOut] = { THIRD_COLOR, SECOND_COLOR},
-	[SchemeHp]  = { THIRD_COLOR, SECOND_COLOR }
+	[SchemeNorm] = { DMENU_NORMAL_FG_COLOR,          DMENU_NORMAL_BG_COLOR},
+	[SchemeSel]  = { DMENU_SELECTED_FG_COLOR,        DMENU_SELECTED_BG_COLOR},
+	[SchemeOut]  = { DMENU_POINTER_OUTSIDE_FG_COLOR, DMENU_POINTER_OUTSIDE_FG_COLOR},
+	[SchemeHp]   = { DMENU_POINTER_HOVER_FG_COLOR,   DMENU_POINTER_HOVER_BG_COLOR}
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines      = 15;
