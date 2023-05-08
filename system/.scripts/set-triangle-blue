@@ -6,18 +6,18 @@ xwallpaper --zoom ~/Pictures/Wallpapers/old/triangle.png
 # change dwm colors
 cd ~/.config/suckless/dwm/
 
-sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/theme-triangle.h"/' config.h
+sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/triangle-blue.h"/' config.h
 
 # change st colors
 cd ~/.config/suckless/st/
 
-sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/theme-triangle.h"/' config.h
+sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/triangle-blue.h"/' config.h
 
 
 # change dmenu colors
 cd ~/.config/suckless/dmenu/
 
-sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/theme-triangle.h"/' config.h
+sed -i '3s/.*/#include "\/home\/falk\/.config\/suckless\/themes\/triangle-blue.h"/' config.h
 
 
 st -e bash -c "

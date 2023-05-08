@@ -123,6 +123,7 @@ map gp cd ~/Pictures
 map gS cd ~/.scripts
 map gc cd ~/.config
 map gCS cd ~/.config/suckless
+map gse cd ~/.setup
 map gsc cd ~/.setup/config
 map gss cd ~/.setup/system
 
