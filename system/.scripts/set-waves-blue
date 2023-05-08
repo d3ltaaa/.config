@@ -1,8 +1,7 @@
 #!/bin/bash
-
 # set wallpaper
-xwallpaper --zoom ~/Pictures/Wallpapers/old/triangle.png
-cp ~/Pictures/Wallpapers/old/triangle.png ~/.config/wall/picture
+xwallpaper --zoom ~/Pictures/Wallpapers/old/64m36y0xpf561.png
+cp ~/Pictures/Wallpapers/old/64m36y0xpf561.png ~/.config/wall/picture
 
 # change dwm colors
 cd ~/.config/suckless/dwm/

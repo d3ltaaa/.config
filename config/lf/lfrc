@@ -30,7 +30,7 @@ cmd viewimg ${{
     pkill -SIGINT feh
     feh --scale-down --auto-zoom "$f" &
     sleep 0.4
-    xdotool key Alt+k
+    # xdotool key Alt+j
 }}
 
 cmd open ${{

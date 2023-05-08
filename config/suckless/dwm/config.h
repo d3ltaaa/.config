@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/themes/arch-light.h"
+#include "/home/falk/.config/suckless/themes/arch-dark.h"
 
 /* appearance */
 static const unsigned int borderpx  = 7;        /* border pixel of windows */
@@ -146,8 +146,9 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_o,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_o,  togglefloating, {0} },
+	{ MODKEY,                       XK_o,      setlayout,      {0} },
+	{ MODKEY|ShiftMask,             XK_o,      togglefloating, {0} },
+	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
