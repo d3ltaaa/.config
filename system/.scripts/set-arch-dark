@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # set wallpaper
-xwallpaper --zoom ~/Pictures/Wallpapers/Favorites/arch-nord-dark.png
-cp ~/Pictures/Wallpapers/Favorites/arch-nord-dark.png ~/.config/wall/picture
+xwallpaper --zoom ~/Pictures/Wallpapers/arch-nord-dark.png
+cp ~/Pictures/Wallpapers/arch-nord-dark.png ~/.config/wall/picture
 
 # change dwm colors
 cd ~/.config/suckless/dwm/
