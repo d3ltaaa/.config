@@ -18,8 +18,8 @@
 
 // ST
 #define ST_BACKGROUND_COLOR "#2e3440"
-#define ST_FOREGROUND_COLOR "#8fbcbb"
+#define ST_FOREGROUND_COLOR "#eff3fa"
 #define ST_BLACK_COLOR "#2e3440"
-#define ST_WHITE_COLOR "#8fbcbb"
+#define ST_WHITE_COLOR "#eff3fa"
 #define ST_ACCENT_COLOR "#8fbcbb"
 
