@@ -42,8 +42,7 @@ cmd open ${{
             xdotool key Alt+k
             ;;
         *.pdf) 
-            pkill -SIGINT zathura
-            zathura "$f" &
+            dwmswallow $WINDOWID; zathura "$f"
             ;;
 
         *) $EDITOR "$f";;
