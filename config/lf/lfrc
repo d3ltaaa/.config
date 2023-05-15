@@ -41,6 +41,11 @@ cmd open ${{
             sleep 0.4
             xdotool key Alt+k
             ;;
+        *.pdf) 
+            pkill -SIGINT zathura
+            zathura "$f" &
+            ;;
+
         *) $EDITOR "$f";;
     esac
 }}

@@ -95,6 +95,32 @@ menu_wifi () {
     esac 
 }
 
+menu_themes () {
+    options=("Arch-Dark" "Arch-Light" "Arch-Cyan" "Triangle-Blue" "Go back") 
+    selected=$(printf '%s\n' "${options[@]}" | dmenu -i -p "Select Theme:")
+
+    case $selected in 
+        "Arch-Dark")
+            set-arch-dark
+            ;;#
+
+        "Arch-Light")
+            set-arch-light
+            ;;
+
+        "Arch-Cyan")
+            set-arch-cyan
+            ;;
+
+        "Triangle-Blue")
+            set-triangle-blue
+            ;;
+        "Go back")
+            menu_main
+            ;;
+    esac
+}
+
 menu_main
 
 
