@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BUTTON in
-    1) system_menu;;
+    1) menu_system;;
 esac
 
 echo "    󰣇    "

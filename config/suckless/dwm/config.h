@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 //
-#include "/home/falk/.config/suckless/themes/arch-light.h"
+#include "/home/falk/.config/suckless/themes/arch-dark.h"
 
 /* appearance */
 static const unsigned int borderpx  = 7;        /* border pixel of windows */
@@ -103,12 +103,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *system_menu[] = { "/home/falk/.scripts/system_menu", NULL};
-static const char *volume_inc[] = {"/home/falk/.scripts/d-volume-inc", NULL};
-static const char *volume_dec[] = {"/home/falk/.scripts/d-volume-dec", NULL};
-static const char *volume_mut[] = {"/home/falk/.scripts/d-volume-mute", NULL};
-static const char *brightness_up[] = {"/home/falk/.scripts/d-light-up", NULL};
-static const char *brightness_dw[] = {"/home/falk/.scripts/d-light-dw", NULL};
 
 
 static const Key keys[] = {
@@ -171,12 +165,12 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
-    { MODKEY|ShiftMask,	        	XK_s,	   spawn,	       {.v = system_menu} },
-    { 0,                            0x1008ff13, spawn,         {.v = volume_inc}},
-    { 0,                            0x1008ff11, spawn,         {.v = volume_dec}},
-    { 0,                            0x1008ff12, spawn,         {.v = volume_mut}}, 
-    { 0,                            0x1008ff03, spawn,         {.v = brightness_dw}}, 
-    { 0,                            0x1008ff02, spawn,         {.v = brightness_up}}, 
+    { MODKEY|ShiftMask,	        	XK_s,	   spawn,	       SHCMD("menu_system") },
+    { 0,                            0x1008ff13, spawn,         SHCMD("scr_volume inc") },
+    { 0,                            0x1008ff11, spawn,         SHCMD("scr_volume dec") },
+    { 0,                            0x1008ff12, spawn,         SHCMD("scr_volume mute") }, 
+    { 0,                            0x1008ff03, spawn,         SHCMD("scr_light down") }, 
+    { 0,                            0x1008ff02, spawn,         SHCMD("scr_light up") }, 
 
 }; 
 

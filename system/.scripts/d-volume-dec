@@ -1,4 +1,0 @@
-#!/bin/bash
-
-pamixer --decrease 5
-pkill -RTMIN+1 dwmblocks

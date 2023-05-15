@@ -82,13 +82,16 @@ cmd remove_file ${{
     rm "$f"
 }}
 
+cmd make ${{
+    make && sudo make install
+}}
+
 # remove defaults
 map m 
 map o
 map n
 map "'"
 map '"'
-map d
 map c
 map e
 map f
@@ -97,7 +100,6 @@ map r
 # Basic Functions
 map . set hidden!
 map p paste
-map x cut
 map y copy
 map <enter> open
 map R reload
@@ -109,6 +111,7 @@ map rd remove_dir
 
 map mf mkfile
 map md mkdir
+map mm make 
 
 map bv viewimg
 map bg setwallpaper
