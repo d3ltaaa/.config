@@ -36,10 +36,11 @@ cmd viewimg ${{
 cmd open ${{
     case "$f" in 
         *.jpg|*.jpeg|*.png) 
-            pkill -SIGINT feh
-            feh --scale-down --auto-zoom "$f" &
-            sleep 0.4
-            xdotool key Alt+k
+            dwmswallow $WINDOWID; feh --scale-dwon --auto-zoom "$f"
+            # pkill -SIGINT feh
+            # feh --scale-down --auto-zoom "$f" &
+            # sleep 0.4
+            # xdotool key Alt+k
             ;;
         *.pdf) 
             dwmswallow $WINDOWID; zathura "$f"
