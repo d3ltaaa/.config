@@ -3,7 +3,7 @@
 work_time=25
 pause_time=5
 loop_amount=3
-big_break=30
+big_break=35
 
 function pause_p {
     read -t 1 -n 1 key
