@@ -23,6 +23,7 @@ cmd mkfile ${{
 
 cmd setwallpaper ${{
     xwallpaper --zoom "$f"
+    cp "$f" ~/.config/wall/picture
 }}
 
 # Image view
@@ -117,6 +118,8 @@ map rd remove_dir
 map mf mkfile
 map md mkdir
 map mm make 
+
+map zz unarchive
 
 map bv viewimg
 map bg setwallpaper
