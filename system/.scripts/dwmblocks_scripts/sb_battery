@@ -18,15 +18,15 @@ if [ "$status" == "Discharging" ]; then
     fi
 elif [ "$status" == "Charging" ]; then
     if [ "$percent" -ge 90 ]; then
-        echo "    $percent%  C    "
+        echo "    $percent%    󱐋 "
     elif [ "$percent" -ge 70 ] && [ "$percent" -lt 90 ]; then
-        echo "    $percent%  C    "
+        echo "    $percent%    󱐋 "
     elif [ "$percent" -ge 40 ] && [ "$percent" -lt 70 ]; then
-        echo "    $percent%  C    "
+        echo "    $percent%    󱐋 "
     elif [ "$percent" -ge 20 ] && [ "$percent" -lt 40 ]; then
-        echo "    $percent%  C    "
+        echo "    $percent%    󱐋 "
     elif [ "$percent" -ge 0 ] && [ "$percent" -lt 20 ]; then
-        echo "    $percent%  C    "
+        echo "    $percent%    󱐋 "
     fi
 fi
 
@@ -34,3 +34,4 @@ case $BUTTON in
     4) d-light-up;;
     5) d-light-dw;;
 esac
+
