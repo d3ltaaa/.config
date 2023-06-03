@@ -22,12 +22,12 @@ while true; do
   find -type f ! -name 'compressed_pictures.zip' -delete
 
   # Add a delay before unzipping to simulate some activity
-  sleep 1
 
   unzip -o compressed_pictures.zip  # Unzip the files
   rm compressed_pictures.zip
 
   # Add a longer delay before starting the next iteration
   sleep 5
+
 done
 
