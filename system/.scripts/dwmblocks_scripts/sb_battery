@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# useful commands
+# acpi -bi
+# upower -i /org/freedesktop/UPower/devices/battery_BAT0
+
 percent="$(cat /sys/class/power_supply/BAT0/capacity)"
 status="$(cat /sys/class/power_supply/BAT0/status)"
 
@@ -16,6 +20,10 @@ if [ "$status" == "Discharging" ]; then
     elif [ "$percent" -ge 0 ] && [ "$percent" -lt 20 ]; then
         echo "    $percent%      "
     fi
+elif [ "$status" == "Full" ]; then
+    echo "   100%      " 
+elif [ "$status" == "Not charging" ]; then
+    echo "   100%      " 
 elif [ "$status" == "Charging" ]; then
     if [ "$percent" -ge 90 ]; then
         echo "    $percent%    󱐋 "
@@ -29,6 +37,8 @@ elif [ "$status" == "Charging" ]; then
         echo "    $percent%    󱐋 "
     fi
 fi
+
+
 
 case $BUTTON in 
     4) d-light-up;;
