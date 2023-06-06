@@ -6,7 +6,8 @@
 
 percent="$(cat /sys/class/power_supply/BAT0/capacity)"
 status="$(cat /sys/class/power_supply/BAT0/status)"
-
+output="$(acpi -bi)"
+time=$(echo "$output" | awk -F ' ' 'NR==1 {print $5}')
 
 if [ "$status" == "Discharging" ]; then 
     if [ "$percent" -ge 90 ]; then
@@ -41,7 +42,6 @@ fi
 
 
 case $BUTTON in 
-    4) d-light-up;;
-    5) d-light-dw;;
+    1) dunstify "$time";;
 esac
 
