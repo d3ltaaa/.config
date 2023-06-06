@@ -40,8 +40,16 @@ elif [ "$status" == "Charging" ]; then
 fi
 
 
-
-case $BUTTON in 
-    1) dunstify "$time";;
-esac
-
+if [ "$status" == "Discharging" ]; then 
+    case $BUTTON in 
+        1) dunstify "$time";
+    esac
+elif [ "$status" == "Charging" ]; then
+    case $BUTTON in 
+        1) dunstify "$time";
+    esac
+else
+    case $BUTTON in
+        1) dunstify "Not charging / Full"
+    esac
+fi
