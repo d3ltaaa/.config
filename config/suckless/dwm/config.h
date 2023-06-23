@@ -14,7 +14,7 @@ static const int swaldecay = 3;
 static const int swalretroactive = 1;
 static const char swalsymbol[] = "👅";
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
-static const int showbar            = 0;        /* 0 means no bar */
+static const int showbar            = 1;        /* 0 means no bar */
 static const int showtitle          = 0;        /* 0 means no title */
 static const int showtags           = 1;        /* 0 means no tags */
 static const int showlayout         = 1;        /* 0 means no layout indicator */
@@ -91,7 +91,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \

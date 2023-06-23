@@ -93,6 +93,92 @@ menu_wifi () {
             menu_main
             ;;
     esac 
+    menu_main
+}
+
+menu_blue () {
+
+    options=( "Connect to device" "Scan for devices" "Back" "Close")
+
+    selected=$(printf '%s\n' "${options[@]}" | dmenu -i)
+
+    case $selected in
+        "Connect to device" )
+
+            device_amount=$(bluetoothctl devices Paired | wc -l)
+
+            if [[ $device_amount = 1 ]]; then
+                select=$(bluetoothctl devices Paired | awk '{print $3}' | dmenu -l 1 -i)
+                MAC=$(bluetoothctl devices Paired | awk {'print $2'})
+                    [ -z $MAC ] && MAC=NoDeviceFound # Prevents accidental disconnect error
+
+            else
+                select=$(bluetoothctl devices Paired | awk '{print $3}' | dmenu -i)
+                MAC=$(bluetoothctl devices Paired | grep $select | awk {'print $2'}) 
+                    [ -z $MAC ] && MAC=NoDeviceFound # Prevents accidental disconnect error
+            fi
+
+            connect=$(bluetoothctl info $MAC | grep Connected: | awk '{print $2}')
+
+            if [[ $connect = no ]]; then 
+                notify-send "Attempting to connect to $select"
+                bluetoothctl connect $MAC && notify-send "Connected Successfully" || notify-send "Failed to Connect"
+
+            elif [[ $connect = yes ]]; then
+                notify-send "Attempting to disconnect $select" && notify-send "Disconnected Successfully" || notify-send "Failed to Disconnect"
+                bluetoothctl disconnect $MAC 
+
+            fi
+            menu_blue
+            ;;
+
+        "Scan for devices" )
+             
+
+            duration=3
+    
+            # Start the scan in the background
+            bluetoothctl scan on &
+
+            # Sleep for the desired duration
+            sleep "$duration"
+
+            # Stop the scan by killing the background process
+            kill $(pgrep bluetoothctl)
+
+            # Wait for the background process to finish
+            wait
+
+            # Fetch the list of devices
+            select_to_connect=$(bluetoothctl devices | awk '{print $3}' | dmenu -i)
+
+            MAC=$(bluetoothctl devices | grep $select_to_connect | awk {'print $2'}) 
+                [ -z $MAC ] && MAC=NoDeviceFound # Prevents accidental disconnect error
+            
+            connect=$(bluetoothctl info $MAC | grep Connected: | awk '{print $2}')
+
+            if [[ $connect = no ]]; then 
+                
+                notify-send "Attempting to connect to $select_to_connect"
+                bluetoothctl connect $MAC && notify-send "Connected Successfully" || notify-send "Failed to Connect"
+
+            elif [[ $connect = yes ]]; then
+                notify-send "Attempting to disconnect $select_to_connect" && notify-send "Disconnected Successfully" || notify-send "Failed to Disconnect"
+                bluetoothctl disconnect $MAC 
+
+            fi
+
+            menu_blue
+
+            ;;
+        "Back" )
+            menu_main
+            ;;
+        "Close" )
+            ;;
+    esac
+
+    menu_main
 }
 
 menu_themes () {
@@ -119,6 +205,7 @@ menu_themes () {
             menu_main
             ;;
     esac
+    menu_main
 }
 
 menu_main
